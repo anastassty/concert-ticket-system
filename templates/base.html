@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Concert System{% endblock %}</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .navbar {
+            background-color: #121212;
+            padding: 18px 30px;
+            border-bottom: 1px solid #333;
+        }
+
+        .navbar a {
+            color: #b3b3b3;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .navbar a:hover {
+            color: #a855f7;
+        }
+
+        .container {
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        h1, h2, h3 {
+            color: #a855f7;
+        }
+
+        p {
+            color: #b3b3b3;
+        }
+
+        table {
+            border-collapse: collapse;
+            background: #1e1e1e;
+            color: #ffffff;
+            width: 100%;
+        }
+
+        th {
+            background-color: #a855f7;
+            color: white;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #333;
+        }
+
+        tr:hover {
+            background-color: #2a2a2a;
+        }
+
+        input, select {
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background: #2a2a2a;
+            color: white;
+            width: 250px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #a855f7;
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #9333ea;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #1e1e1e;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 30px 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+
+        .card:hover {
+            background: #a855f7;
+            color: white;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .hero img {
+            width: 250px;
+            border-radius: 50px;
+            margin-top: 15px;
+            border: 2px solid #a855f7
+        }
+
+        label {
+            color: #b3b3b3;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/add_artist">Add Artist</a>
+    <a href="/add_concert">Add Concert</a>
+    <a href="/add_customer">Add Customer</a>
+    <a href="/add_ticket">Add Ticket</a>
+    <a href="/view_concerts">Concerts</a>
+    <a href="/artist_concerts">Artist Concerts</a>
+    <a href="/customer_spending">Spending</a>
+    <a href="/top_artists">Top Artists</a>
+</div>
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Top Artists{% endblock %}
+{% block content %}
+
+<h1>Top 3 Artists by Revenue</h1>
+
+<hr>
+<br>
+
+{% if rows %}
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Rank</th>
+            <th>Artist Name</th>
+            <th>Total Revenue (USD)</th>
+        </tr>
+
+        {% for row in rows %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Artist Concerts{% endblock %}
+{% block content %}
+
+<h1>View Concerts by Artist</h1>
+
+<form method="POST">
+    <label>Artist Name:</label>
+    <select name="artist_id">
+        {% for artist in artists %}
+        <option value="{{artist[0]}}"> {{artist[1]}} </option>
+        {% endfor %}
+    </select>
+    <button type="submit">Search</button>
+</form>
+
+<br>
+<hr>
+<br>
+
+{% if rows %}
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Artist Name</th>
+            <th>Venue Name</th>
+            <th>City</th>
+            <th>Concert Date</th>
+        </tr>
+
+        {% for row in rows %}
+        <tr>
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+{% endblock %}

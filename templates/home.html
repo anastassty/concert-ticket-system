@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div class="hero">
+    <div class="hero-text">
+        <h1>Concert Ticket System</h1>
+        <p>Welcome to my DBMS project!</p>
+        <img src="{{ url_for('static', filename='cat.jpg') }}" alt="cat with headphones">
+    </div>
+</div>
+
+
+<div class="card-grid">
+    <a href="/add_artist" class="card"> Add Artist</a>
+    <a href="/add_concert" class="card"> Add Concert</a>
+    <a href="/add_customer" class="card"> Add Customer</a>
+    <a href="/add_ticket" class="card"> Add Ticket</a>
+    <a href="/view_concerts" class="card"> View Concerts</a>
+    <a href="/artist_concerts" class="card"> View Concerts by Artist</a>
+    <a href="/customer_spending" class="card"> View Total Spending per Customer</a>
+    <a href="/top_artists" class="card"> Top 3 Artists by Revenue</a>
+</div>
+
+{% endblock %}

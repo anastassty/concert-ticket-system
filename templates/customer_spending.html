@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Spending{% endblock %}
+{% block content %}
+
+<h1>View Total Spending per Customer</h1>
+
+<form method="POST">
+    <label>Customer ID:</label>
+    <select name="customer_id">
+        <option value="all">Show all customers</option>
+        {% for customer in customers %}
+        <option value="{{ customer[0] }}">{{customer[1]}} - Customer ID: {{customer[0]}}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Search</button>
+</form>
+
+<br>
+<hr>
+<br>
+
+{% if rows %}
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>Total Spent</th>
+        </tr>
+
+        {% for row in rows %}
+        <tr>
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+{% endblock %}
