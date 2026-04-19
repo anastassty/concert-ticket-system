@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Data{% endblock %}
+{% block content %}
+
+<h1>Artists</h1>
+<table>
+    <tr><th>artist_id</th><th>artist_name</th><th>genre</th></tr>
+    {% for row in artists %}
+    <tr><td>{{row[0]}}</td><td>{{row[1]}}</td><td>{{row[2]}}</td></tr>
+    {% endfor %}
+</table>
+
+<br>
+<h1>Concerts</h1>
+<table>
+    <tr><th>concert_id</th><th>venue_name</th><th>city</th><th>concert_date</th><th>artist_id</th></tr>
+    {% for row in concerts %}
+    <tr><td>{{row[0]}}</td><td>{{row[1]}}</td><td>{{row[2]}}</td><td>{{row[3]}}</td><td>{{row[4]}}</td></tr>
+    {% endfor %}
+</table>
+
+<br>
+<h1>Customers</h1>
+<table>
+    <tr><th>customer_id</th><th>customer_name</th></tr>
+    {% for row in customers %}
+    <tr><td>{{row[0]}}</td><td>{{row[1]}}</td></tr>
+    {% endfor %}
+</table>
+
+<br>
+<h1>Tickets</h1>
+<table>
+    <tr><th>ticket_id</th><th>concert_id</th><th>customer_id</th><th>seat_number</th><th>price</th></tr>
+    {% for row in tickets %}
+    <tr><td>{{row[0]}}</td><td>{{row[1]}}</td><td>{{row[2]}}</td><td>{{row[3]}}</td><td>{{row[4]}}</td></tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

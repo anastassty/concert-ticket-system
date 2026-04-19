@@ -235,5 +235,19 @@ def top_artists():
             rows = cursor.fetchall()
     return render_template("top_artists.html", rows=rows)
 
+@app.route("/show_data")
+def show_data():
+    with psycopg2.connect(DATABASE_URL) as conn:
+        with conn.cursor() as cursor:
+            cursor.execute("SELECT * FROM artist;")
+            artists = cursor.fetchall()
+            cursor.execute("SELECT * FROM concert;")
+            concerts = cursor.fetchall()
+            cursor.execute("SELECT * FROM customer;")
+            customers = cursor.fetchall()
+            cursor.execute("SELECT * FROM ticket;")
+            tickets = cursor.fetchall()
+    return render_template("show_data.html", artists=artists, concerts=concerts, customers=customers, tickets=tickets)
+
 if __name__ == "__main__":
     app.run(debug=True)
