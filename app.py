@@ -250,4 +250,4 @@ def show_data():
     return render_template("show_data.html", artists=artists, concerts=concerts, customers=customers, tickets=tickets)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
